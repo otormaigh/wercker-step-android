@@ -1,0 +1,3 @@
+virenv/
+.idea/*
+__pycache__
