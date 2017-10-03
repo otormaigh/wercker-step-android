@@ -2,4 +2,5 @@ box: wercker/python
 build:
   steps:
     - pip-install
-    - wercker/validate-wercker-step
+    - validate-wercker-step
+    - shellcheck

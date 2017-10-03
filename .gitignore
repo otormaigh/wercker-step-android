@@ -1,3 +1,4 @@
 virenv/
 .idea/*
 __pycache__
+.wercker/

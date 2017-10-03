@@ -1,8 +1,10 @@
 name: android-deploy-notify
-version: 0.0.1
+version: 0.0.17
 description: Deploy an APK to S3 after a successful build and notify multiple users/channels on slack.
 keywords:
-  - slack, android, s3
+  - slack
+  - android
+  - s3
 properties:
   notify_success:
     type: string

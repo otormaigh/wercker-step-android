@@ -40,7 +40,6 @@ def get_elapsed_time():
 def hours_minutes(seconds):
     """Convert seconds into hours and minutes."""
     m, s = divmod(seconds, 60)
-    # parts = []
     mins = pluralize(m, 'minute')
     secs = pluralize(s, 'second')
     if mins:
@@ -66,6 +65,8 @@ def result_color():
 
 
 def download_link():
-    url = os.getenv('ANDROID_DEPLOY_NOTIFY_DOWNLOAD_URL')
-    file_name = url.split('/')[-1]
-    return "<{}|{}>".format(url, file_name)
+    url = os.getenv('BUCKET_URL')
+    build_type = os.getenv('ANDROID_DEPLOY_NOTIFY_BUILD_TYPE')
+    base_name = os.getenv('BASE_NAME')
+    apk_name = "{}-{}.apk".format(base_name.split('##BASE_NAME[', 1)[1].split(']')[0], build_type)
+    return "<{}|{}>".format(url + apk_name, apk_name)
